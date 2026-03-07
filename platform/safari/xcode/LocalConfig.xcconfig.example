@@ -1,0 +1,12 @@
+// Local signing configuration for BlockTube for Safari.
+// Copy this file to LocalConfig.xcconfig and fill in your Team ID.
+//
+// Find your Team ID:
+//   1. Open Xcode > Settings > Accounts
+//   2. Select your Apple ID
+//   3. Your Team ID is the 10-character string shown under your team name,
+//      or visible in Keychain: security find-certificate -a -c "Apple Development" -p | openssl x509 -noout -subject
+//
+// This file (LocalConfig.xcconfig) is gitignored and must not be committed.
+
+DEVELOPMENT_TEAM =

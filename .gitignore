@@ -1,0 +1,8 @@
+dist/
+blocktube.zip
+platform/safari/build/
+platform/safari/build-test-no-destination/
+platform/safari/xcode/**/xcuserdata/
+platform/safari/xcode/**/*.xcuserstate
+output/
+platform/safari/xcode/LocalConfig.xcconfig
