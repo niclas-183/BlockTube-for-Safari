@@ -2,6 +2,14 @@
 
 A macOS Safari Web Extension that blocks YouTube videos, channels, and comments by title, channel name, channel ID, video ID, or keyword. This is a Safari port of the original [BlockTube](https://github.com/amitbl/blocktube) extension for Chrome and Firefox.
 
+<div align="center">
+  <img src="assets/screenshots/popup.png" width="32%" />
+  <img src="assets/screenshots/options.png" width="32%" />
+  <img src="assets/screenshots/context-menu.png" width="32%" />
+</div>
+
+<br>
+
 **What it blocks:**
 - Videos by title, channel name, channel ID, or video ID
 - Comments by user or content
@@ -36,7 +44,29 @@ Required once. Without a signing team Safari will reset the "Allow Unsigned Exte
    ```
    security find-certificate -a -c "Apple Development" -p | openssl x509 -noout -subject
    ```
-   The Team ID is the `OU` field (10-character alphanumeric string). If nothing is returned, open Xcode > Settings > Accounts, add your Apple ID, click **Manage Certificates**, create an **Apple Development** certificate, then run the command again.
+   The Team ID is the `OU` field (10-character alphanumeric string). If nothing is returned, you need to create an Apple Development certificate first:
+
+   - Open **Xcode → Settings**
+
+     <img src="assets/screenshots/xcode-1-settings-menu.png" width="380">
+
+   - Go to **Apple Accounts** and select your Apple ID
+
+     <img src="assets/screenshots/xcode-2-apple-accounts.png" width="460">
+
+   - Click your **Personal Team**
+
+     <img src="assets/screenshots/xcode-3-personal-team.png" width="460">
+
+   - Click **Manage Certificates**
+
+     <img src="assets/screenshots/xcode-4-manage-certs.png" width="460">
+
+   - Click **+** and choose **Apple Development**
+
+     <img src="assets/screenshots/xcode-5-create-cert.png" width="460">
+
+   Then run the `security` command above again to get your Team ID.
 
 3. Edit `platform/safari/xcode/LocalConfig.xcconfig` and set your Team ID:
    ```
