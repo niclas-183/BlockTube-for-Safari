@@ -18,7 +18,7 @@ A macOS Safari Web Extension that blocks YouTube videos, channels, and comments 
 
 ### Prerequisites
 
-- Full Xcode (not just Command Line Tools). Verify with `xcode-select -p` — it should point to `/Applications/Xcode.app`. If it doesn't, run:
+- Full Xcode (not just Command Line Tools) — available free on the [Mac App Store](https://apps.apple.com/app/xcode/id497799835). Verify with `xcode-select -p` — it should point to `/Applications/Xcode.app`. If it doesn't, run:
   ```
   sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
   ```
