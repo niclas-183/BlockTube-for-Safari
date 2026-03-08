@@ -170,11 +170,12 @@ body {
   border: none;
   border-right: 1px solid var(--borders);
   color: var(--white);
-  padding: .35em .6em;
+  padding: .4em .55em;
   cursor: pointer;
-  font-size: 1.05em;
-  line-height: 1;
-  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
   transition: 150ms all;
 }
 
@@ -183,21 +184,19 @@ body {
 }
 
 .theme-btn:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 [data-theme="dark"] .theme-btn.active {
-  background-color: #dde1e7;
-  color: #1a1a1a;
+  background-color: #4d5666;
+  color: #ffffff;
   opacity: 1;
-  font-weight: 700;
 }
 
 [data-theme="light"] .theme-btn.active {
   background-color: #4a5260;
   color: #ffffff;
   opacity: 1;
-  font-weight: 700;
 }
 
 /* SECTION */
