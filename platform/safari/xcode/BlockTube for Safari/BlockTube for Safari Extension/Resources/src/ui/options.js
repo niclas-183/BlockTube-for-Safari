@@ -10,6 +10,7 @@
 
   const jsEditors = {};
   let isLoggedIn = false;
+  let systemThemeListener = null;
   let storageData = {
     filterData: {
       javascript: defaultJSFunction,
@@ -25,22 +26,7 @@
 
   const textAreas = ['title', 'channelName', 'channelId', 'videoId', 'comment'];
 
-  function detectColorScheme(){
-    let theme="light";
-
-    if(storageData.uiTheme){
-      theme = storageData.uiTheme;
-    } else if(!window.matchMedia) {
-      theme = "light";
-    } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme = "dark";
-    }
-
-    if (!storageData.uiTheme) {
-      storageData.uiTheme = theme;
-      saveData();
-    }
-
+  function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     document.querySelectorAll(".CodeMirror").forEach((area) => {
       if (theme === "dark") {
@@ -49,7 +35,31 @@
         area.classList.remove('cm-darktheme');
       }
     });
+  }
 
+  function detectColorScheme() {
+    const stored = storageData.uiTheme;
+
+    // Remove any previous system-theme listener before re-evaluating
+    if (systemThemeListener) {
+      window.matchMedia("(prefers-color-scheme: dark)").removeEventListener('change', systemThemeListener);
+      systemThemeListener = null;
+    }
+
+    if (!stored || stored === 'system') {
+      // Follow OS preference and react live to changes
+      const mq = window.matchMedia("(prefers-color-scheme: dark)");
+      applyTheme(mq.matches ? 'dark' : 'light');
+      systemThemeListener = (e) => applyTheme(e.matches ? 'dark' : 'light');
+      mq.addEventListener('change', systemThemeListener);
+      // Persist 'system' on first run so the dropdown shows the right value
+      if (!stored) {
+        storageData.uiTheme = 'system';
+        saveData();
+      }
+    } else {
+      applyTheme(stored);
+    }
   }
 
   function loadData() {
@@ -139,7 +149,7 @@
     $('vidLength_1').value         = vidLength[1];
     $('vidLength_type').value      = get('options.vidLength_type', 'allow', obj);
 
-    $('ui_theme').value            = get('uiTheme', 'light', obj);
+    $('ui_theme').value            = get('uiTheme', 'system', obj);
     $('pass_save').value           = get('uiPass', '', obj);
     $('disable_trending').checked  = get('options.trending', false, obj);
     $('disable_shorts').checked    = get('options.shorts', false, obj);

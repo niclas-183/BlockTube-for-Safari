@@ -38,7 +38,7 @@
           <div class="tabset" id="tabbed-filters-parent">
             <div class="tab-menu" id="tabbed-filters-menu">
               <input type="radio" name="filter-tab" id="tab-title" aria-controls="title-tab-content" checked>
-              <label style="border-top: 1px solid var(--borders)" for="tab-title">Video title <span class="tooltip" title="One entry per line. Matches whole words by default.&#10;Wildcards: iran* (starts with), *iran* (contains), ir?n (any char)&#10;Regex: /pattern/flags">?</span></label>
+              <label style="border-top: 1px solid var(--borders)" for="tab-title">Video title <span class="tooltip" title="One entry per line. Matches whole words by default.&#10;Wildcards: news* (starts with), *news* (contains), ne?s (any char)&#10;Regex: /pattern/flags">?</span></label>
 
               <input type="radio" name="filter-tab" id="tab-channel-name" aria-controls="channel-name-tab-content">
               <label for="tab-channel-name">Channel name <span class="tooltip" title="One entry per line. Matches whole words by default.&#10;Wildcards: news* (starts with), *news* (contains), n?ws (any char)&#10;Regex: /pattern/flags">?</span></label>
@@ -112,6 +112,7 @@
           <div>
             <label class="block-label" for="ui_theme">UI Theme</label>
             <select id="ui_theme" class="select">
+              <option value="system">System</option>
               <option value="light">Light</option>
               <option value="dark">Dark</option>
             </select>
