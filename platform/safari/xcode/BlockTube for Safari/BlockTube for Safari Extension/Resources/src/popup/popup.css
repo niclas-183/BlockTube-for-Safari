@@ -1,9 +1,9 @@
 [data-theme="light"] {
-  --bg-color: #fff;
-  --text-color: #222;
+  --bg-color: #f2f2f7;
+  --text-color: #1a1a1a;
   --accent-color: #06c;
   --link-color: #06c;
-  --toggle-bg: #ccc;
+  --toggle-bg: #b0b8c4;
   --toggle-checked-bg: #06c;
 }
 

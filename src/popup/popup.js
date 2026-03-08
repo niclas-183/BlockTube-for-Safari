@@ -3,17 +3,15 @@ let enabled = true;
 document.addEventListener('DOMContentLoaded', () => {
 
   function detectColorScheme() {
-
     BTBrowser.storage.local.get("storageData", (result) => {
-      let uiTheme = "light";
-      let storageTheme = result.storageData?.uiTheme;
+      const storageTheme = result.storageData?.uiTheme;
+      let uiTheme;
 
-      if(storageTheme){
+      if (!storageTheme || storageTheme === 'system') {
+        uiTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark" : "light";
+      } else {
         uiTheme = storageTheme;
-      } else if(!window.matchMedia) {
-        uiTheme = "light";
-      } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        uiTheme = "dark";
       }
 
       document.documentElement.setAttribute("data-theme", uiTheme);
