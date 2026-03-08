@@ -172,9 +172,9 @@ body {
   color: var(--white);
   padding: .35em .6em;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.05em;
   line-height: 1;
-  opacity: 0.4;
+  opacity: 0.5;
   transition: 150ms all;
 }
 
@@ -183,13 +183,19 @@ body {
 }
 
 .theme-btn:hover {
-  background-color: var(--btn-bg-focus);
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
-.theme-btn.active {
-  background-color: var(--btn-bg-focus);
-  color: var(--white);
+[data-theme="dark"] .theme-btn.active {
+  background-color: #dde1e7;
+  color: #1a1a1a;
+  opacity: 1;
+  font-weight: 700;
+}
+
+[data-theme="light"] .theme-btn.active {
+  background-color: #4a5260;
+  color: #ffffff;
   opacity: 1;
   font-weight: 700;
 }
