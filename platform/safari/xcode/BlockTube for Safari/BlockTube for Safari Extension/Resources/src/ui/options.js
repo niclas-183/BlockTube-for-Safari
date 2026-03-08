@@ -26,6 +26,12 @@
 
   const textAreas = ['title', 'channelName', 'channelId', 'videoId', 'comment'];
 
+  function setThemeToggleActive(theme) {
+    document.querySelectorAll('.theme-btn').forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.theme === theme);
+    });
+  }
+
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     document.querySelectorAll(".CodeMirror").forEach((area) => {
@@ -46,13 +52,15 @@
       systemThemeListener = null;
     }
 
+    setThemeToggleActive(stored || 'system');
+
     if (!stored || stored === 'system') {
       // Follow OS preference and react live to changes
       const mq = window.matchMedia("(prefers-color-scheme: dark)");
       applyTheme(mq.matches ? 'dark' : 'light');
       systemThemeListener = (e) => applyTheme(e.matches ? 'dark' : 'light');
       mq.addEventListener('change', systemThemeListener);
-      // Persist 'system' on first run so the dropdown shows the right value
+      // Persist 'system' on first run so the toggle shows the right state
       if (!stored) {
         storageData.uiTheme = 'system';
         saveData();
@@ -89,8 +97,6 @@
 
     storageData.filterData.vidLength   = [vidLenMin, vidLenMax];
     storageData.filterData.javascript  = jsEditors['javascript'].getValue();
-
-    storageData.uiTheme = $('ui_theme').value;
 
     storageData.uiPass = $('pass_save').value;
     storageData.options.trending = $('disable_trending').checked;
@@ -149,7 +155,9 @@
     $('vidLength_1').value         = vidLength[1];
     $('vidLength_type').value      = get('options.vidLength_type', 'allow', obj);
 
-    $('ui_theme').value            = get('uiTheme', 'system', obj);
+    const importedTheme = get('uiTheme', 'system', obj);
+    if (obj !== undefined) storageData.uiTheme = importedTheme;
+    setThemeToggleActive(importedTheme);
     $('pass_save').value           = get('uiPass', '', obj);
     $('disable_trending').checked  = get('options.trending', false, obj);
     $('disable_shorts').checked    = get('options.shorts', false, obj);
@@ -376,6 +384,14 @@
       }
     });
   }
+
+  document.querySelectorAll('.theme-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      storageData.uiTheme = btn.dataset.theme;
+      detectColorScheme();
+      if (isLoggedIn) saveData();
+    });
+  });
 
   initTabs('tabbed-filters-parent');
 

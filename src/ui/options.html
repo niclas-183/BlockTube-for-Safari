@@ -16,6 +16,11 @@
       <div id="header-menu">
         <a class="nav-item" target="_blank" href="https://github.com/amitbl/blocktube/wiki">How to use</a>
         <a class="nav-item" target="_blank" href="https://github.com/amitbl/blocktube/releases">Changelog (v{EXT_VERSION})</a>
+        <div id="theme-toggle" class="theme-toggle-group">
+          <button class="theme-btn" data-theme="light" title="Light mode">☀&#xFE0E;</button>
+          <button class="theme-btn" data-theme="system" title="System default">◑</button>
+          <button class="theme-btn" data-theme="dark" title="Dark mode">☽&#xFE0E;</button>
+        </div>
       </div>
     </div>
     <div id="main">
@@ -109,14 +114,6 @@
         </fieldset>
         <legend>Other options</legend>
         <fieldset>
-          <div>
-            <label class="block-label" for="ui_theme">UI Theme</label>
-            <select id="ui_theme" class="select">
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </div>
           <div>
             <label class="block-label" for="pass_save">UI Password</label>
             <input id="pass_save" type="password" autocomplete="off" />
