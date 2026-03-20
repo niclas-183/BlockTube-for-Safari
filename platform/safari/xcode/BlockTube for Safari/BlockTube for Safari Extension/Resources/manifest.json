@@ -1,6 +1,6 @@
 {
   "name": "BlockTube",
-  "version": "0.4.8",
+  "version": "1.0",
   "description": "YouTube™ content blocker",
   "manifest_version": 3,
   "content_scripts": [
