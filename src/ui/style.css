@@ -169,13 +169,11 @@ body {
   background: none;
   border: none;
   border-right: 1px solid var(--borders);
-  color: var(--white);
   padding: .4em .55em;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.55;
   transition: 150ms all;
 }
 
@@ -183,20 +181,32 @@ body {
   border-right: none;
 }
 
+/* Inactive: clearly dark in light mode, clearly light in dark mode */
+[data-theme="light"] .theme-btn {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="dark"] .theme-btn {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .theme-btn:hover {
-  opacity: 0.85;
+  opacity: 1;
+  filter: brightness(1.2);
 }
 
 [data-theme="dark"] .theme-btn.active {
   background-color: #4d5666;
   color: #ffffff;
   opacity: 1;
+  filter: none;
 }
 
 [data-theme="light"] .theme-btn.active {
   background-color: #4a5260;
   color: #ffffff;
   opacity: 1;
+  filter: none;
 }
 
 /* SECTION */
