@@ -536,29 +536,16 @@ input#import {
   display: block;
 }
 
-.bmc-footer {
-  text-align: center;
-  padding: 1.4em 0 1.2em;
-  border-top: 1px solid var(--borders);
-  margin-top: 1.5em;
-}
-
-.bmc-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .4em;
+.bmc-nav {
   background: #FFDD00;
-  color: #000000;
-  font-size: .8em;
-  font-weight: 600;
-  padding: .45em 1em;
+  color: #000000 !important;
   border-radius: 6px;
-  text-decoration: none;
-  transition: opacity 150ms;
+  padding: .3em .7em !important;
+  font-weight: 600;
 }
 
-.bmc-btn:hover {
-  opacity: 0.8;
+.bmc-nav:hover {
+  opacity: 0.85;
 }
 
 @media screen and (min-width: 1025px) {
