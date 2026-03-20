@@ -134,11 +134,11 @@
         <legend>Other options</legend>
         <fieldset>
           <div>
-            <label class="block-label" for="pass_save">UI Password</label>
+            <label class="block-label" for="pass_save">UI Password <span class="tooltip" data-tooltip="Lock the options page behind a password.&#10;You will be prompted to enter it each time you open settings.&#10;Leave blank to disable the lock.">?</span></label>
             <input id="pass_save" type="password" autocomplete="off" />
           </div>
           <div>
-            <label class="block-label" for="block_message">Video blocked message</label>
+            <label class="block-label" for="block_message">Video blocked message <span class="tooltip" data-tooltip="Custom text shown in place of a blocked video on YouTube.&#10;Leave blank to use the default placeholder.">?</span></label>
             <input id="block_message" type="text" autocomplete="off" />
           </div>
           <div>
@@ -146,7 +146,7 @@
             <input id="percent_watched_hide" size="3" type="number" min="0" max="100" autocomplete="off" /> % <span class="tooltip" data-tooltip="* This feature uses Youtube's watch time tracking and will only work when logged in&#10; * Matched videos are only hidden and will work on direct access and playlists">?</span>
           </div>
           <div>
-            <label class="block-label" for="vidLength_0">Runtime blocking</label>
+            <label class="block-label" for="vidLength_0">Runtime blocking <span class="tooltip" data-tooltip="Block or exclusively allow videos based on their duration.&#10;Example: &quot;Block videos between 0 - 60 seconds&quot; removes Shorts-length clips.&#10;Example: &quot;Allow videos between 120 - 99999 seconds&quot; blocks everything under 2 minutes.&#10;Leave both fields empty to disable.">?</span></label>
             <select id="vidLength_type" class="select">
               <option value="block">Block</option>
               <option value="allow">Allow</option>
@@ -160,11 +160,11 @@
           <div class="multi-column-content">
           <div style="margin-top: 0">
             <input id="disable_mixes" type="checkbox" />
-            <label for="disable_mixes">Block YouTube's auto-generated playlists</label>
+            <label for="disable_mixes">Block YouTube's auto-generated playlists <span class="tooltip" data-tooltip="Hides YouTube Mix playlists that are automatically generated based on a song or video.">?</span></label>
           </div>
           <div>
             <input id="disable_trending" type="checkbox" />
-            <label for="disable_trending">Block Explore page</label>
+            <label for="disable_trending">Block Explore page <span class="tooltip" data-tooltip="Hides the Explore / Trending tab so YouTube's algorithmic recommendations don't appear there.">?</span></label>
           </div>
           <div>
             <input id="disable_shorts" type="checkbox" />
@@ -172,11 +172,11 @@
           </div>
           <div>
             <input id="disable_movies" type="checkbox" />
-            <label for="disable_movies">Block Youtube Movies videos</label>
+            <label for="disable_movies">Block Youtube Movies videos <span class="tooltip" data-tooltip="Hides paid movie listings from YouTube's Movies section and search results.">?</span></label>
           </div>
           <div>
             <input id="autoplay" type="checkbox" />
-            <label for="autoplay">Enable Auto-playing next suggested video when blocking occurs</label>
+            <label for="autoplay">Enable Auto-playing next suggested video when blocking occurs <span class="tooltip" data-tooltip="When a video you are watching gets blocked, automatically skip to the next suggested video instead of stopping.">?</span></label>
           </div>
           <div>
               <input id="suggestions_only" type="checkbox" />
@@ -196,7 +196,7 @@
           </div>
           <div>
             <input id="disable_on_history" type="checkbox" />
-            <label for="disable_on_history">Disable blocking on watch history page</label>
+            <label for="disable_on_history">Disable blocking on watch history page <span class="tooltip" data-tooltip="Lets blocked videos and channels still appear on your YouTube watch history page, so you can see what you have previously watched.">?</span></label>
           </div>
           </div>
         </fieldset>
