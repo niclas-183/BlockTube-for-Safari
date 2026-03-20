@@ -1,5 +1,6 @@
 dist/
 blocktube.zip
+.DS_Store
 platform/safari/build/
 platform/safari/build-test-no-destination/
 platform/safari/xcode/**/xcuserdata/
