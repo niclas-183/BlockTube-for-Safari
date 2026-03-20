@@ -163,13 +163,14 @@ body {
   border-radius: .3em;
   overflow: hidden;
   background-color: var(--btn-bg);
+  align-self: stretch;
 }
 
 .theme-btn {
   background: none;
   border: none;
   border-right: 1px solid var(--borders);
-  padding: .5em .6em;
+  padding: 0 .6em;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -604,9 +605,10 @@ input#import {
   font-weight: 600;
 }
 
-.bmc-nav:hover {
-  opacity: 0.85;
-  border: 1.5px solid #c9a800 !important;
+.nav-item.bmc-nav:hover {
+  background: #ffaa00;
+  border-color: transparent;
+  opacity: 1;
 }
 
 /* OTHER OPTIONS — layout grid */
