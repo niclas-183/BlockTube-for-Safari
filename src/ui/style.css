@@ -282,13 +282,64 @@ fieldset:last-of-type div {
 /* Tooltip */
 .tooltip-link, .tooltip {
   background: #a43c46;
-  padding-inline:5px;
+  padding-inline: 5px;
   border-radius: 50px;
   text-decoration: none;
   color: var(--white-force);
   font-weight: 800;
   font-size: smaller;
-  cursor: help;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tooltip::before, .tooltip-link::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e2229;
+  color: #e8ecf0;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: pre-wrap;
+  width: max-content;
+  max-width: 300px;
+  line-height: 1.5;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease;
+  z-index: 999;
+}
+
+.tooltip::after, .tooltip-link::after {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1e2229;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease;
+  z-index: 999;
+}
+
+.tooltip:hover::before, .tooltip-link:hover::before,
+.tooltip.open::before, .tooltip-link.open::before,
+.tooltip:focus::before, .tooltip-link:focus::before {
+  opacity: 1;
+}
+
+.tooltip:hover::after, .tooltip-link:hover::after,
+.tooltip.open::after, .tooltip-link.open::after,
+.tooltip:focus::after, .tooltip-link:focus::after {
+  opacity: 1;
 }
 
 /* CODEMIRROR - CODE BLOCK FORMAT */

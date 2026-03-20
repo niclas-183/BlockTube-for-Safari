@@ -395,4 +395,17 @@
 
   initTabs('tabbed-filters-parent');
 
+  // Custom tooltip: click to pin open, click elsewhere or again to close
+  document.querySelectorAll('.tooltip, .tooltip-link').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.tooltip.open, .tooltip-link.open').forEach((t) => t.classList.remove('open'));
+      if (!isOpen) el.classList.add('open');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.tooltip.open, .tooltip-link.open').forEach((t) => t.classList.remove('open'));
+  });
+
 }());
