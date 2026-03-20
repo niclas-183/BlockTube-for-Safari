@@ -609,10 +609,72 @@ input#import {
   opacity: 0.85;
 }
 
-@media screen and (min-width: 1025px) {
-.multi-column-content {
-  column-count: 2; /* Divides the content into two columns */
-  column-gap: 20px; /* Adds a gap between the columns */
-  /* Other properties like column-rule can be added */
+/* OTHER OPTIONS — layout grid */
+.opts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9em 2.5em;
+  margin-bottom: 1em;
 }
+
+.opts-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+}
+
+.opts-field > label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.opts-field input[type="text"],
+.opts-field input[type="password"] {
+  width: 100%;
+}
+
+.opts-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--white);
+}
+
+.opts-section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.45;
+  margin: 1.5em 0 0.7em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--borders);
+}
+
+.opts-check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55em 2.5em;
+  margin-bottom: 0.4em;
+}
+
+.opts-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45em;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--white);
+}
+
+.opts-check input[type="checkbox"] {
+  margin-top: 0.2em;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #a43c46;
 }
