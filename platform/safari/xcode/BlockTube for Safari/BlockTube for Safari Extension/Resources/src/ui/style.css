@@ -169,7 +169,7 @@ body {
   background: none;
   border: none;
   border-right: 1px solid var(--borders);
-  padding: .4em .55em;
+  padding: .5em .6em;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -600,13 +600,13 @@ input#import {
 .bmc-nav {
   background: #FFDD00;
   color: #000000 !important;
-  border-radius: 6px;
-  padding: .3em .7em !important;
+  border: 1.5px solid transparent !important;
   font-weight: 600;
 }
 
 .bmc-nav:hover {
   opacity: 0.85;
+  border: 1.5px solid #c9a800 !important;
 }
 
 /* OTHER OPTIONS — layout grid */
