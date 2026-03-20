@@ -107,6 +107,12 @@ Enable the Develop menu (Safari > Settings > Advanced > Show features for web de
 
 This project is a fork of [BlockTube](https://github.com/amitbl/blocktube) by [amitbl](https://github.com/amitbl). The core filtering engine, content scripts, popup, and options UI are derived from that original work. The Safari platform wrapper, Xcode project, cross-browser API shim (`ext_api.js`), and Safari-specific background handling are additions made in this fork.
 
+## Support
+
+If this is useful to you, feel free to buy me a coffee.
+
+<a href="https://buymeacoffee.com/niclas183"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="40"></a>
+
 ## License
 
 This project is based on BlockTube and remains under the GPLv3 license. See [LICENSE](LICENSE) for details.
